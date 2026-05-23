@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#111B21</color>
+    <color name="primary_dark">#0B141A</color>
+    <color name="colorAccent">#25D366</color>
+    <color name="accent_dark">#1FA855</color>
+    <color name="accent_soft">#2B8A5A</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="bg_app">#0B141A</color>
+    <color name="bg_surface">#111B21</color>
+    <color name="bg_surface_elevated">#1F2C34</color>
+    <color name="bg_surface_card">#182229</color>
+
+    <color name="text_primary">#E9EDEF</color>
+    <color name="text_secondary">#9AA6AD</color>
+    <color name="text_muted">#8696A0</color>
+
+    <color name="message_sent">#005C4B</color>
+    <color name="message_received">#202C33</color>
+    <color name="status_seen">#53BDEB</color>
+
+    <color name="divider_dark">#23323A</color>
+    <color name="error_red">#FF6B6B</color>
+    <color name="badge_red">#FF3B30</color>
+    <color name="warning_orange">#F7A600</color>
+</resources>

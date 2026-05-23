@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_select_copy" android:title="Copy" android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_select_star" android:title="Star" android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_select_forward" android:title="Forward" android:showAsAction="never" />
+    <item android:id="@+id/action_select_delete" android:title="Delete" android:showAsAction="never" />
+</menu>

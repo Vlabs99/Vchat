@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_profile_image"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_surface_card"
+            android:contentDescription="Profile Image"
+            android:padding="3dp"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/tv_change_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="Change Photo"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Username" android:textColor="@color/text_primary" />
+        <EditText android:id="@+id/et_username" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@drawable/bg_input_dark" android:hint="Enter username" android:padding="12dp" android:textColor="@color/text_primary" android:textColorHint="@color/text_secondary" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Email" android:textColor="@color/text_primary" />
+        <EditText android:id="@+id/et_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@drawable/bg_input_dark" android:enabled="false" android:padding="12dp" android:textColor="@color/text_secondary" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Bio" android:textColor="@color/text_primary" />
+        <EditText android:id="@+id/et_bio" android:layout_width="match_parent" android:layout_height="100dp" android:layout_marginTop="6dp" android:background="@drawable/bg_input_dark" android:gravity="top" android:hint="Write something about you" android:padding="12dp" android:textColor="@color/text_primary" android:textColorHint="@color/text_secondary" />
+
+        <Button android:id="@+id/btn_save_profile" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:backgroundTint="@color/colorAccent" android:text="Save Profile" android:textAllCaps="false" android:textColor="@color/white" />
+        <Button android:id="@+id/btn_logout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_button_secondary" android:text="Logout" android:textAllCaps="false" android:textColor="@color/text_primary" />
+
+    </LinearLayout>
+</ScrollView>

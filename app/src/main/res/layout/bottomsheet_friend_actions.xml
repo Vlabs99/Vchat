@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_surface_card"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text="Friend actions"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/row_remove_friend" style="@style/TextAppearance.AppCompat.Medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?attr/selectableItemBackground" android:padding="12dp" android:text="Remove friend" android:textColor="@color/text_primary"/>
+    <TextView android:id="@+id/row_block_user" style="@style/TextAppearance.AppCompat.Medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?attr/selectableItemBackground" android:padding="12dp" android:text="Block user" android:textColor="@color/text_primary"/>
+    <TextView android:id="@+id/row_unblock_user" style="@style/TextAppearance.AppCompat.Medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?attr/selectableItemBackground" android:padding="12dp" android:text="Unblock user" android:textColor="@color/text_primary"/>
+    <TextView android:id="@+id/row_report_user" style="@style/TextAppearance.AppCompat.Medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?attr/selectableItemBackground" android:padding="12dp" android:text="Report user" android:textColor="@color/error_red"/>
+    <TextView android:id="@+id/row_mute_user" style="@style/TextAppearance.AppCompat.Medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?attr/selectableItemBackground" android:padding="12dp" android:text="Mute notifications" android:textColor="@color/text_primary"/>
+</LinearLayout>

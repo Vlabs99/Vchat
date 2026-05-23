@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_attach_sheet"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/tv_action_sheet_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/text_primary"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Chat actions"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/row_pin"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content" android:text="PIN" android:textColor="@color/text_secondary" android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tv_pin_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pin chat"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_archive"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content" android:text="ARC" android:textColor="@color/text_secondary" android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tv_archive_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Archive"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_mute"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content" android:text="MUT" android:textColor="@color/text_secondary" android:textSize="10sp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mute" android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_delete"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content" android:text="DEL" android:textColor="@color/error_red" android:textSize="10sp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Delete chat" android:textColor="@color/error_red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_unread"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content" android:text="NEW" android:textSize="10sp" android:textColor="@color/colorAccent" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mark as unread" android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_info"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content" android:text="INF" android:textColor="@color/text_secondary" android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tv_info_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+</LinearLayout>

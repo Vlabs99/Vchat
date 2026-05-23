@@ -1,0 +1,63 @@
+# Phase 4: Chat Experience and Stability Improvements
+
+This phase transforms the functional chat core into a highly responsive, production-ready messaging experience by introducing typing indicators, read receipts, Glide image loading, robust lifecycle management, and Firestore security rules.
+
+## User Review Required
+> [!IMPORTANT]
+> - I will be adding the `Glide` library to `build.gradle.kts` to handle asynchronous profile image loading and caching.
+> - For tracking `onlineStatus` and `lastSeen`, I will update these fields in the `users` document directly from the `onResume` and `onPause` lifecycle methods of `MainActivity`.
+> - Please review the proposed security rules and chat enhancements below.
+
+## Proposed Changes
+
+### 1. Dependencies & App Lifecycle
+#### [MODIFY] `build.gradle.kts`
+- Add the `com.github.bumptech.glide:glide` dependency for robust image loading.
+
+#### [MODIFY] `MainActivity.java`
+- Override `onResume()` and `onPause()` to update the current user's `onlineStatus` ("online" / "offline") and `lastSeen` timestamp in Firestore.
+
+### 2. Chat Experience Enhancements
+#### [MODIFY] `ChatModel.java`
+- Add `Map<String, Boolean> typing` to track typing status per participant.
+- Add `Map<String, Integer> unreadCounts` for tracking unread messages per user.
+
+#### [MODIFY] `MessageModel.java`
+- Update the `isRead` boolean to a robust `status` string ("sent", "delivered", "read").
+
+#### [MODIFY] `ChatActivity.java` & `ChatsFragment.java`
+- **Typing Indicator**: Attach a `TextWatcher` to the message `EditText` to toggle the user's typing boolean in the `chats` document. Display "Typing..." in the Toolbar when the other participant's flag is true.
+- **Status Observer**: Display "Online" or the formatted `lastSeen` time in the Toolbar subtitle.
+- **Sorting**: Ensure `ChatsFragment` queries order by `lastMessageTimestamp DESCENDING`.
+- **Auto-scroll**: Programmatically scroll to the bottom of the message `RecyclerView` on new snapshot data.
+
+### 3. UI/UX Improvements
+#### [NEW] `TimeUtils.java`
+- A utility class for generating human-readable timestamps (e.g., "Today at 2:30 PM", "Yesterday", "Monday").
+
+#### [MODIFY] Adapters (`UsersAdapter`, `PendingRequestsAdapter`, `ChatsAdapter`, `MessageAdapter`)
+- Integrate Glide for all `iv_profile_image` views with a default placeholder if the image URL is empty.
+- Utilize `TimeUtils` for formatted timestamps.
+
+#### [MODIFY] All Fragments (`ChatsFragment`, `UsersFragment`, etc.)
+- Enforce strict `ListenerRegistration` cleanup in `onDestroyView()` to prevent memory leaks and zombie listeners.
+
+### 4. Firestore Security & Documentation
+#### [NEW] `firestore.rules`
+- Generate scalable security rules.
+- Restrict read/write operations on the `chats` collection to users who exist within the `participants` map.
+- Validate `chat_requests` to ensure `senderId == request.auth.uid`.
+
+#### [NEW] `docs/` artifacts
+- We will generate structured documentation, a testing checklist, and scalability recommendations.
+
+## Verification Plan
+
+### Automated Tests
+- Build and assemble the application (`./gradlew assembleDebug`) to ensure no dependency or syntax conflicts.
+
+### Manual Verification
+1. Open the app on two devices and verify the "Online" / "Last seen" status actively toggles in the Chat Toolbar.
+2. Begin typing a message on Device A and verify "Typing..." immediately appears on Device B.
+3. Validate that profile images are loaded smoothly using Glide.
+4. Verify the Chats list dynamically sorts the most recently active chats to the top.

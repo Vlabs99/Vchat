@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search_chats"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search chats"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+
+    <item
+        android:id="@+id/action_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notifications"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_pending_requests"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Pending Requests"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_blocked_users"
+        android:title="Blocked Users"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_starred_messages"
+        android:title="Starred Messages"
+        app:showAsAction="never" />
+</menu>

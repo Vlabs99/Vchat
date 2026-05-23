@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917519199193",
+    "project_id": "vchat-2fbe2",
+    "storage_bucket": "vchat-2fbe2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917519199193:android:d787971249a4afbb6fc7c8",
+        "android_client_info": {
+          "package_name": "com.vchat.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWdnw8Uq_hKstg2gsgpkSj2OK8w0HFq-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

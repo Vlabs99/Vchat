@@ -1,0 +1,104 @@
+I am building a full Android realtime messaging application called VChat using Java + Firebase Firestore + Firebase Authentication + Firebase Storage in Android Studio.
+
+The app is inspired by WhatsApp / Instagram DMs / Messenger.
+
+Current architecture already includes:
+
+* direct chats
+* group chats
+* friend system
+* friend requests
+* remove/block/unblock
+* reply system
+* forward system
+* typing indicators
+* pinned messages
+* realtime Firestore listeners
+* pagination
+* delete for me
+* group admin messaging
+* restriction banners
+* modular managers/helpers
+
+Major stabilization work already completed:
+
+1. Chat delete/reopen lifecycle fixed using:
+   chatDeletedAt.<uid>
+   Old hidden messages stay hidden while new activity appears correctly.
+
+2. Relationship system heavily stabilized:
+
+   * centralized applyRestriction(state)
+   * normalized relationship states
+   * precedence system:
+     FRIEND > PENDING > REMOVED > UNKNOWN
+   * listener safety guards
+   * duplicate listener prevention
+   * thread-safe UI updates
+
+3. Mirrored relationship write issue fixed:
+   Runtime tracing discovered:
+   PERMISSION_DENIED during mirrored writes.
+   Firestore rules updated to allow mirrored peer relationship writes safely.
+
+4. Group resurrection fixed:
+   Deleted/hidden groups now reappear automatically when new messages arrive while preserving hidden old history.
+
+5. Listener stabilization completed:
+   relationship/message/presence/pinned/group listeners protected from duplicate registrations and memory leaks.
+
+Current relationship philosophy:
+
+* If X removes Y:
+  only X can resend request.
+* If Y rejects X's retry:
+  only Y can send the next request.
+
+Current stable systems:
+
+* direct messaging
+* group messaging
+* reply/forward
+* delete/reopen lifecycle
+* relationship system mostly stable
+* restriction system
+* realtime sync
+* group resurrection
+
+FCM push notification architecture was already planned and partially implemented:
+
+* FirebaseMessagingService
+* Cloud Functions
+* activeChat anti-spam
+* lockscreen notifications
+* friend request notifications
+* heads-up notifications
+
+BUT live deployment was postponed because Firebase Cloud Functions require Blaze Plan billing activation.
+
+A full stable ZIP backup/restore snapshot of the project was created after relationship stabilization.
+
+Current project status:
+
+* architecture freeze phase
+* focus on real-world testing
+* only high-impact bugs/fixes now
+* avoid major rewrites
+* future features later
+
+Main ChatActivity is around 2200–2500 lines and already partially modularized into managers/helpers like:
+
+* ReplyManager
+* ForwardManager
+* TypingManager
+* ChatComposerController
+
+Future planned features:
+
+* live FCM notifications
+* voice/video calling
+* reactions
+* encryption
+* stories/status
+* media optimization
+* multi-device sync

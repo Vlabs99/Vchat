@@ -41,20 +41,19 @@ https://github.com/Vlabs99/Vchat/releases/download/v1.0/app-debug.apk
 
 | Splash | Chat List |
 |---|---|
-| ![](public/screenshots/vchat-splash.jpeg) | ![](public/screenshots/vchat-chat-list.jpeg) |
+| ![](docs/vchat-splash.jpeg) | ![](docs/vchat-chat-list.jpeg) |
 
 | Private Chat | Group Chat |
 |---|---|
-| ![](public/screenshots/vchat-private-chat.jpeg) | ![](public/screenshots/vchat-group-chat.jpeg) |
+| ![](docs/vchat-private-chat.jpeg) | ![](docs/vchat-group-chat.jpeg) |
 
 | Group Settings | Profile |
 |---|---|
-| ![](public/screenshots/vchat-group-settings.jpeg) | ![](public/screenshots/vchat-profile.jpeg) |
+| ![](docs/vchat-group-settings.jpeg) | ![](docs/vchat-profile.jpeg) |
 
 | User Search |
 |---|
-| ![](public/screenshots/vchat-user-search.jpeg) |
-
+| ![](docs/vchat-user-search.jpeg) |
 ---
 
 # Features

@@ -1,6 +1,28 @@
 <p align="center">
-  <img src="docs/vchat-logo.png" width="180" />
+  <img src="docs/vchat-logo.png" width="140"/>
 </p>
+
+<h1 align="center">VChat</h1>
+
+<p align="center">
+Realtime Android messaging platform built with Java & Firebase
+</p>
+
+<p align="center">
+
+![Platform](https://img.shields.io/badge/Platform-Android-00C853?style=for-the-badge)
+
+![Language](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge)
+
+![Backend](https://img.shields.io/badge/Backend-Firebase-yellow?style=for-the-badge)
+
+![Architecture](https://img.shields.io/badge/Architecture-Realtime-blue?style=for-the-badge)
+
+</p>
+
+---
+
+![VChat Banner](https://raw.githubusercontent.com/Vlabs99/Vchat/main/docs/banner.png)
 
 # VChat
 

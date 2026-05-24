@@ -28,22 +28,6 @@ Realtime Android messaging platform built with Java & Firebase
 
 Realtime Android messaging application built with Java and Firebase.
 
-![VChat Banner](https://raw.githubusercontent.com/Vlabs99/Vchat/main/docs/banner.png)
-
-# VChat
-
-Modern realtime Android messaging platform built with Java, Firebase, and scalable modular architecture.
-
-![Platform](https://img.shields.io/badge/Platform-Android-00C853?style=for-the-badge)
-
-![Language](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge)
-
-![Backend](https://img.shields.io/badge/Backend-Firebase-yellow?style=for-the-badge)
-
-![Architecture](https://img.shields.io/badge/Architecture-Realtime-blue?style=for-the-badge)
-
-![Status](https://img.shields.io/badge/Status-Active_Development-purple?style=for-the-badge)
-
 ---
 
 # Download APK

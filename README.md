@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="docs/vchat-logo.png" width="180" />
+</p>
+
+# VChat
+
+Realtime Android messaging application built with Java and Firebase.
+
 ![VChat Banner](https://raw.githubusercontent.com/Vlabs99/Vchat/main/docs/banner.png)
 
 # VChat

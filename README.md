@@ -1,43 +1,27 @@
-<p align="center">
-  <img src="docs/vchat-logo.png" width="140"/>
-</p>
+<div align="center">
 
-<h1 align="center">VChat</h1>
+<img src="docs/vchat-logo.png" width="140"/>
 
-<p align="center">
-Realtime Android messaging platform built with Java & Firebase
-</p>
+# VChat Android
 
-<p align="center">
+A comprehensive real-time messaging application built with Java, Android SDK, and Firebase. This is the native Android companion to the VChat Web application, offering a seamless and robust mobile communication experience.
 
-![Platform](https://img.shields.io/badge/Platform-Android-00C853?style=for-the-badge)
-
-![Language](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge)
-
-![Backend](https://img.shields.io/badge/Backend-Firebase-yellow?style=for-the-badge)
-
+![Platform](https://img.shields.io/badge/Platform-Android-00C853?style=for-the-badge&logo=android&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=openjdk&logoColor=white)
+![Firebase](https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Architecture](https://img.shields.io/badge/Architecture-Realtime-blue?style=for-the-badge)
 
-</p>
+</div>
 
 ---
 
-![VChat Banner](https://raw.githubusercontent.com/Vlabs99/Vchat/main/docs/banner.png)
+## Download APK
 
-# VChat
-
-Realtime Android messaging application built with Java and Firebase.
+**[Download Latest APK (v1.0.0)](https://github.com/Vlabs99/Vchat/releases/latest)** *(Check the GitHub Releases tab for the compiled APK)*
 
 ---
 
-# Download APK
-
-📦 Latest APK  
-https://github.com/Vlabs99/Vchat/releases/download/v1.0/app-debug.apk
-
----
-
-# Screenshots
+## Screenshots
 
 | Splash | Chat List |
 |---|---|
@@ -54,188 +38,91 @@ https://github.com/Vlabs99/Vchat/releases/download/v1.0/app-debug.apk
 | User Search |
 |---|
 | ![](docs/vchat-user-search.jpeg) |
----
-
-# Features
-
-## Messaging System
-- Realtime messaging
-- Direct one-to-one chats
-- Group chats
-- Reply to message
-- Forward message
-- Pinned messages
-- Message pagination
-- Typing indicator
-- Realtime Firestore synchronization
-- Realtime message updates
 
 ---
 
-## Group System
-- Group creation
-- Add members to group
-- Remove members from group
-- Group admin messaging control
-- Group system messages
-- Group resurrection after new messages
-- Group chat visibility restoration
-- Hidden/deleted group recovery
+## Features
+
+### Messaging System
+- [x] Realtime messaging & Firestore synchronization
+- [x] Direct one-to-one chats & Group chats
+- [x] Reply to message & Forward message
+- [x] Pinned messages & Message pagination
+- [x] Typing indicators & Realtime message updates
+
+### Group System
+- [x] Group creation with add/remove member functionality
+- [x] Group admin messaging control
+- [x] Group system messages
+- [x] Group resurrection after new messages
+- [x] Group chat visibility restoration
+
+### Relationship System
+- [x] Send, accept, and reject friend requests
+- [x] Remove friend & Block/Unblock user
+- [x] Friend-only messaging restrictions
+- [x] Pending request handling
+
+### Lifecycle & Restriction System
+- [x] Delete chat for me (Old hidden history isolation)
+- [x] Fresh chat reopen lifecycle
+- [x] Restriction banners & Composer visibility control
 
 ---
 
-## Relationship System
-- Friend requests
-- Accept friend request
-- Reject friend request
-- Remove friend
-- Block user
-- Unblock user
-- Friend-only messaging restrictions
-- Relationship state management
-- Pending request handling
-
----
-
-## Lifecycle & Restriction System
-- Delete chat for me
-- Fresh chat reopen lifecycle
-- Old hidden history isolation
-- Restriction banners
-- Composer visibility control
-
----
-
-# Architecture
+## Architecture
 
 VChat follows a modular realtime architecture focused on scalability, lifecycle safety, and realtime synchronization.
 
-## Core Systems
-
+### Core Systems
 - Realtime Firestore listener system
 - Modular manager/helper architecture
 - Restriction precedence engine
-- Relationship synchronization layer
-- Lifecycle-safe chat restoration
-- Thread-safe UI update handling
-- Presence and typing infrastructure
+- Lifecycle-safe chat restoration & Thread-safe UI updates
 - Group resurrection flow
-- Realtime conversation synchronization
+
+### Main Managers
+- `ChatComposerController`
+- `ReplyManager`, `ForwardManager`, `TypingManager`
+- `FriendManager`, `GroupManager`, `ChatManager`
 
 ---
 
-## Main Managers
+## Tech Stack
 
-- ChatComposerController
-- ReplyManager
-- ForwardManager
-- TypingManager
-- FriendManager
-- GroupManager
-- ChatManager
+- **Java** & **Android Studio** (Material Design)
+- **Firebase Authentication**
+- **Cloud Firestore**
+- **Firebase Cloud Storage**
+- **Gradle** (Build System)
 
 ---
 
-# Firebase Integration
+## Installation
 
-- Firebase Authentication
-- Firebase Firestore
-- Firebase Storage
-- Cloud Functions groundwork
-- FCM groundwork partially implemented
-
----
-
-# Tech Stack
-
-## Android
-- Java
-- Android Studio
-- Material Design
-
-## Backend & Cloud
-- Firebase Authentication
-- Firebase Firestore
-- Firebase Storage
-- Firebase Cloud Functions
-
-## Architecture
-- Realtime Listener Architecture
-- Manager / Helper Modular Design
-- Lifecycle-safe synchronization
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vlabs99/Vchat.git
+   ```
+2. Open the project in **Android Studio** (Hedgehog or newer).
+3. Allow Gradle to sync the project dependencies.
+4. Add your `google-services.json` file (obtained from your Firebase Console) to the `app/` directory.
+5. Click **Run** (Shift + F10) to build and install the app on your emulator or connected physical device.
 
 ---
 
-# Installation
+## Future Improvements
 
-## Clone Repository
-
-```bash
-git clone https://github.com/Vlabs99/Vchat.git
-```
-
-## Open Project
-
-Open the project using:
-
-- Android Studio Hedgehog or newer
+- [ ] End-to-End Encryption
+- [ ] Push Notifications via FCM (Firebase Cloud Messaging)
+- [ ] Voice and Video Calling Integration
+- [ ] Advanced Message Formatting & Code Snippets
 
 ---
 
-## Firebase Setup
+## Developer
 
-Add your Firebase configuration file:
-
-```text
-app/google-services.json
-```
-
-Enable:
-- Firebase Authentication
-- Firestore Database
-- Firebase Storage
-
----
-
-## Run Project
-
-```bash
-Sync Gradle
-Run App
-```
-
----
-
-# Future Roadmap
-
-- Firebase Cloud Messaging (FCM)
-- Heads-up notifications
-- Lockscreen notifications
-- Media messaging
-- Poll messages
-- Event messages
-- Contact sharing
-- Sticker support
-- Active chat anti-spam system
-
----
-
-# Developer
-
-**Vishvarajsinh Chudasama**
-
-MCA Student • Android Developer • Realtime Systems Enthusiast
-
-Focused on scalable Android systems, realtime architectures, and production-style engineering.
-
----
-
-# Portfolio
-
-🌐 https://vlabs99.github.io/VLabs/
-
----
-
-# License
-
-This project is developed for educational, portfolio, and learning purposes.
+**Vishwarajsinh Chudasama**
+- GitHub: [@Vlabs99](https://github.com/Vlabs99)
+- Portfolio: [Vlabs99.github.io/VLabs](https://Vlabs99.github.io/VLabs/)
+- MCA Student • Android Developer • Realtime Systems Enthusiast

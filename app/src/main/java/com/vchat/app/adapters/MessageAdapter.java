@@ -114,8 +114,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             bindReactionLine(h.tvReactions, message);
             bindReplyPreview(h.tvReplyPreview, message);
             bindMessageBody(h.ivMessageImage, h.tvMessageText, message, isImage, isSticker, isPoll, isEvent);
-            bindMessageClick(h.itemView, message, isPoll, isEvent);
-            bindCommonGestures(h.itemView, message, position);
+            bindCommonGestures(h.itemView, message, position, isPoll, isEvent);
         } else {
             ReceivedMessageViewHolder h = (ReceivedMessageViewHolder) holder;
             h.tvTimestamp.setText(time);
@@ -124,12 +123,11 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             bindReactionLine(h.tvReactions, message);
             bindReplyPreview(h.tvReplyPreview, message);
             bindMessageBody(h.ivMessageImage, h.tvMessageText, message, isImage, isSticker, isPoll, isEvent);
-            bindMessageClick(h.itemView, message, isPoll, isEvent);
-            bindCommonGestures(h.itemView, message, position);
+            bindCommonGestures(h.itemView, message, position, isPoll, isEvent);
         }
     }
 
-    private void bindCommonGestures(View itemView, MessageModel message, int position) {
+    private void bindCommonGestures(View itemView, MessageModel message, int position, boolean isPoll, boolean isEvent) {
         GestureDetector detector = new GestureDetector(itemView.getContext(), new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent e) {
@@ -150,8 +148,19 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             return true;
         });
         itemView.setOnClickListener(v -> {
-            if (!selectionMode) return;
-            toggleSelection(message);
+            if (selectionMode) {
+                toggleSelection(message);
+                return;
+            }
+            if (isPoll) {
+                int selected = nextVoteSelection(message);
+                if (selected >= 0) voteOnPoll(message.getMessageId(), selected);
+                return;
+            }
+            if (isEvent) {
+                showEventDetailsDialog(v, message.getMessageText());
+                return;
+            }
         });
     }
 
@@ -209,21 +218,6 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         } else {
             messageView.setText(message.getMessageText());
         }
-    }
-
-    private void bindMessageClick(View itemView, MessageModel message, boolean isPoll, boolean isEvent) {
-        if (isPoll) {
-            itemView.setOnClickListener(v -> {
-                int selected = nextVoteSelection(message);
-                if (selected >= 0) voteOnPoll(message.getMessageId(), selected);
-            });
-            return;
-        }
-        if (isEvent) {
-            itemView.setOnClickListener(v -> showEventDetailsDialog(v, message.getMessageText()));
-            return;
-        }
-        itemView.setOnClickListener(null);
     }
 
     private void bindReactionLine(TextView tvReactions, MessageModel message) {
